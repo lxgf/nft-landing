@@ -125,15 +125,21 @@ body {
     margin-bottom: 0;
 }
 
-
 .jobs-modal__content__row>div {
     display: inline-block;
 }
 
 .jobs-modal__content__row__btn {
+    border: 3px solid transparent;
     background: #08090D98;
     color: white;
-    padding: .7rem 5rem;
+    padding: .5rem 4.8rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.jobs-modal__content__row__btn:hover {
+    border-color: #12D489;
 }
 
 .container {
@@ -387,6 +393,18 @@ header>a:hover {
     .bottom-container {
         top: 85%;
     }
+
+    .jobs-modal__content__row {
+        font-size: 22px;
+    }
+
+    .jobs-modal__content__row__btn {
+        padding: .5rem 2rem;
+    }
+
+    header {
+        font-size: 34px;;
+    }
 }
 
 @media (max-width: 910px) {
@@ -418,5 +436,20 @@ header>a:hover {
     
     .bottom-container {
         top: 88%;
+    }
+
+    .jobs-modal__content__row {
+        font-size: 20px;
+    }
+
+    .jobs-modal__content__row__btn {
+        padding: .5rem 1rem;
+    }
+
+    .contacts-modal {
+        background-image: url(assets/images/contacts-icon.svg), url(assets/images/green-rect.svg);
+        background-repeat: no-repeat;
+        background-position: left bottom, right;
+        background-size: 30%, contain;
     }
 }

@@ -3,50 +3,44 @@ let modalContainer = document.querySelector('.modal-container');
 let jobsModal = document.querySelector('.jobs-modal');
 let contactsModal = document.querySelector('.contacts-modal');
 
-document.querySelector('.jobs-link').addEventListener('click', (e) => {
-    if(darkOverlay.classList.contains('hidden')) {
-    darkOverlay.classList.remove('hidden');
-    }
-    if(modalContainer.classList.contains('hidden')) {
-     modalContainer.classList.remove('hidden');
-    };
-    if(jobsModal.classList.contains('hidden')) {
-    jobsModal.classList.remove('hidden');
-    };
+const addCloseListener = (closeBtnClass, modal) => {
+    document.querySelector(closeBtnClass).addEventListener('click', e => {
+        if(!darkOverlay.classList.contains('hidden'))
+            darkOverlay.classList.add('hidden')
+        if(!modalContainer.classList.contains('hidden'))
+            modalContainer.classList.add('hidden')
+        if(!modal.classList.contains('hidden'))
+            modal.classList.add('hidden')
+    })
+}
+
+addCloseListener('.jobs-close', jobsModal);
+addCloseListener('.contacts-close', contactsModal);
+
+const addLinkListener = (linkClass, modal) => {
+    document.querySelector(linkClass).addEventListener('click', e => {
+        if(darkOverlay.classList.contains('hidden'))
+            darkOverlay.classList.remove('hidden')
+        if(modalContainer.classList.contains('hidden'))
+             modalContainer.classList.remove('hidden')
+        if(modal.classList.contains('hidden'))
+            modal.classList.remove('hidden')
+    })
+}
+
+addLinkListener('.jobs-link', jobsModal);
+addLinkListener('.contacts-link', contactsModal);
+
+let showBtns = document.querySelectorAll('.jobs-modal__content__row__btn')
+
+showBtns.forEach((showBtn) => {
+    showBtn.addEventListener('click', e => {
+        e.target.innerHTML = '+7 800 555 35 05';
+    })
 })
 
-document.querySelector('.jobs-close').addEventListener('click', (e) => {
-    if(!darkOverlay.classList.contains('hidden')) {
-    darkOverlay.classList.add('hidden');
-    }
-    if(!modalContainer.classList.contains('hidden')) {
-     modalContainer.classList.add('hidden');
-    };
-    if(!jobsModal.classList.contains('hidden')) {
-    jobsModal.classList.add('hidden');
-    };
-})
+let buyBtn = document.querySelector('.buy-btn')
 
-document.querySelector('.contacts-link').addEventListener('click', (e) => {
-    if(darkOverlay.classList.contains('hidden')) {
-    darkOverlay.classList.remove('hidden');
-    }
-    if(modalContainer.classList.contains('hidden')) {
-     modalContainer.classList.remove('hidden');
-    };
-    if(contactsModal.classList.contains('hidden')) {
-    contactsModal.classList.remove('hidden');
-    };
-})
-
-document.querySelector('.contacts-close').addEventListener('click', (e) => {
-    if(!darkOverlay.classList.contains('hidden')) {
-    darkOverlay.classList.add('hidden');
-    }
-    if(!modalContainer.classList.contains('hidden')) {
-     modalContainer.classList.add('hidden');
-    };
-    if(!contactsModal.classList.contains('hidden')) {
-    contactsModal.classList.add('hidden');
-    };
+buyBtn.addEventListener('click', () => {
+    console.log('there should be a transition to the catalog page))')
 })
