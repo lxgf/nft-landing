@@ -23,6 +23,119 @@ body {
     background: #4DD585;
 }
 
+.dark-overlay {
+    z-index: 20;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    opacity: 40%;
+}
+
+.modal-container {
+    z-index: 30;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.contacts-modal {
+    z-index: 30;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    color: #08090D;
+    background: white;
+    padding: 2.4rem 3.2rem;
+    background-image: url('assets/images/contacts-icon.svg'), url('assets/images/green-rect.svg');
+    background-repeat: no-repeat;
+    background-position: left, right;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal__header__title {
+    display: inline-block;
+    padding: 1.2rem 1.6rem;
+    background: #08090D;
+    color: white;
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.075em;
+    font-weight: 400;
+}
+
+.modal__header__close-btn {
+    height: 25px;
+    margin-top: 1.2rem;
+    cursor: pointer;
+}
+
+.contacts-modal__content {
+    margin-top: .8rem;
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contacts-modal__email {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.contacts-modal__tel {
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.jobs-modal {
+    z-index: 30;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #08090D;
+    background: white;
+    padding: 2.4rem 3.2rem;
+    background-image: url('assets/images/jobs-icon.svg'), url('assets/images/green-rect-2.svg');
+    background-repeat: no-repeat;
+    background-position: right, left;
+}
+
+.jobs-modal__content {
+    margin-top: 4.4rem;
+    margin-bottom: 7rem;
+}
+
+.jobs-modal__content__row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    align-items: center;
+    margin-bottom: 1.6rem;
+}
+
+.jobs-modal__content__row:last-child {
+    margin-bottom: 0;
+}
+
+
+.jobs-modal__content__row>div {
+    display: inline-block;
+}
+
+.jobs-modal__content__row__btn {
+    background: #08090D98;
+    color: white;
+    padding: .7rem 5rem;
+}
+
 .container {
     float: right;
     width: fit-content;
@@ -87,7 +200,11 @@ body {
 }
 
 .sculpture-block__img {
+    background-image: url('assets/images/sculpture.jpg');
     height: 100vh;
+    width: 40vw;
+    background-size: cover;
+    background-position: 31% center;
 }
 
 .sculpture-block__gray-bg {
@@ -152,6 +269,8 @@ header>a:hover {
 }
 
 .right-text>div:last-child {
+    display: flex;
+    flex-direction: row;
     text-shadow: 0 .07em 0 #C6D57B;
 }
 
@@ -217,4 +336,87 @@ header>a:hover {
 
 .buy-btn:hover {
     background: #12D489;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1800px) {
+    .sculpture-block__gray-bg {
+        width: 15rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .sculpture-block__gray-bg {
+        width: 0;
+    }
+    
+    .sculpture-block__img {
+        width: 50vw;
+    }
+    
+    .bottom-row__card>img {
+        width: 20rem;
+    }
+    
+    .bottom-container {
+        top: 83%;
+    }
+}
+
+
+@media (max-width: 1150px) {
+    .sculpture-block__gray-bg {
+        width: 0;
+    }
+    
+    .sculpture-block__img {
+        width: 40vw;
+    }
+    
+    .bottom-row__card>img {
+        width: 16rem;
+    }
+    
+    .buy-btn {
+        font-size: 60px
+    }
+    
+    .bottom-container {
+        top: 85%;
+    }
+}
+
+@media (max-width: 910px) {
+    .right-text>div:last-child {
+        flex-direction: column;
+    }
+    
+    .buy-btn {
+        font-size: 40px;
+        padding: 0 4rem;
+        height: 7rem
+    }
+    
+    .sculpture-block__gray-bg {
+        width: 0;
+    }
+    
+    .sculpture-block__img {
+        width: 30vw;
+    }
+    
+    .container {
+        font-size: 80px;
+    }
+    
+    .bottom-row__card>img {
+        width: 12rem;
+    }
+    
+    .bottom-container {
+        top: 88%;
+    }
 }

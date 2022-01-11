@@ -4,12 +4,60 @@
     <meta charset="UTF-8">
     <title>Helios Store</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <div class="modal-container hidden">
+        <div class="contacts-modal hidden">
+            <div class="modal__header">
+                <div class="modal__header__title">
+                    <span>Contacts</span>
+                </div>
+                <img class="modal__header__close-btn contacts-close" src="assets/images/cross.svg" alt="close">
+            </div>
+            <div class="contacts-modal__content">
+                <div class="contacts-modal__email">
+                    iv.artem@mail.ru
+                </div>
+                <div class="contacts-modal__tel">
+                    +7 800 555 35 05
+                </div>
+            </div>
+        </div>
+        <div class="jobs-modal hidden">
+            <div class="modal__header">
+                <div class="modal__header__title">
+                    <span>Jobs</span>
+                </div>
+                <img class="modal__header__close-btn jobs-close" src="assets/images/cross.svg" alt="close">
+            </div>
+            <div class="jobs-modal__content">
+                <div class="jobs-modal__content__row">
+                    <div>Cleaner</div>
+                    <div class="jobs-modal__content__row__btn">
+                        <span>Show number</span>
+                    </div>
+                </div>
+                <div class="jobs-modal__content__row">
+                    <div>Art Director</div>
+                    <div class="jobs-modal__content__row__btn">
+                        <span>Show number</span>
+                    </div>
+                </div>
+                <div class="jobs-modal__content__row">
+                    <div>Talant Director</div>
+                    <div class="jobs-modal__content__row__btn">
+                        <span>Show number</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dark-overlay hidden"></div>
     <div class="lines"></div>
     <header>
-        <a href="#">Works</a>
-        <a href="#">Contacts</a>
+        <a class="jobs-link" href="#">Jobs</a>
+        <a class="contacts-link" href="#">Contacts</a>
     </header>
     <div class="container">
         <div class="left-text">
@@ -27,10 +75,10 @@
             <div class="sculpture-block__text">
                 <div class="right-text">
                     <div>Super Rare</div>
-                    <div>Artworks</div>
+                    <div><p>Art</p><p>jobs</p></div>
                 </div>
             </div>
-            <img class="sculpture-block__img" src="assets/images/sculpture.jpg" alt="sculpture">
+            <div class="sculpture-block__img"></div>
             <div class="sculpture-block__gray-bg"></div>
         </div>
     </div>
