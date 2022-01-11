@@ -13,6 +13,12 @@ html {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 ::selection {
     background: #4DD585;
 }
@@ -113,6 +119,7 @@ header>a:hover {
 }
 
 .left-text {
+    margin-top: -20rem;
     margin-right: 2.2rem;
     text-align: right;
 }
@@ -136,7 +143,7 @@ header>a:hover {
 
 .right-text {
     margin-left: 2.2rem;
-    margin-top: 30rem;
+    margin-top: 5rem;
 }
 
 .right-text>div:first-child {
@@ -146,4 +153,68 @@ header>a:hover {
 
 .right-text>div:last-child {
     text-shadow: 0 .07em 0 #C6D57B;
+}
+
+.bottom-container {
+    width: 100%;
+    display: flex;
+    top: 80%;
+    position: fixed;
+    z-index: 10;
+}
+
+.bottom-row {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: .5rem;
+}
+
+.bottom-row::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+.bottom-row::-webkit-scrollbar {
+    height: .8rem;
+    background-color: #F5F5F5;
+}
+
+.bottom-row::-webkit-scrollbar-thumb {
+    background-color: #12D489;
+}
+
+.bottom-row__card>img {
+    width: 24.6rem;
+}
+
+.bottom-row__card {
+    margin-right: 2.8rem;
+    flex: 0 0 auto;
+}
+
+.bottom-row__card:last-child {
+    margin-right: 0;
+}
+
+.buy-btn {
+    margin-left: 2.2rem;
+    margin-right: 5rem;
+    height: 9.2rem;
+    display: flex;
+    align-items: center;
+    padding: .4rem 5rem;
+    background: white;
+    color: #08090D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 72px;
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.buy-btn:hover {
+    background: #12D489;
 }
