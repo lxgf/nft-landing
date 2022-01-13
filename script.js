@@ -31,7 +31,7 @@ const addLinkListener = (linkClass, modal) => {
 addLinkListener('.jobs-link', jobsModal);
 addLinkListener('.contacts-link', contactsModal);
 
-let showBtns = document.querySelectorAll('.jobs-modal__content__row__btn')
+let showBtns = document.querySelectorAll('.jobs-modal__content__row__btn');
 
 showBtns.forEach((showBtn) => {
     showBtn.addEventListener('click', e => {
@@ -39,8 +39,17 @@ showBtns.forEach((showBtn) => {
     })
 })
 
-let buyBtn = document.querySelector('.buy-btn')
+let buyBtn = document.querySelector('.buy-btn');
 
 buyBtn.addEventListener('click', () => {
     console.log('there should be a transition to the catalog page))')
+})
+
+let scrollRow = document.querySelector('.bottom-row');
+
+scrollRow.addEventListener('wheel', e => {
+    e = e || window.event;
+    let delta = e.deltaY;
+    let preSLeft = scrollRow.scrollLeft;
+    scrollRow.scrollLeft = preSLeft + delta * 3;
 })
